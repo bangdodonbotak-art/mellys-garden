@@ -84,7 +84,7 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [x] 1. Optimasi aset (video, foto WebP, musik, favicon) → `public/`
 - [x] 2. Scaffold (Vite+React+motion, fallback §2; `src/data/site.js`, token tema, shell)
 - [x] 3. Hero + nav + pemutar musik
-- [ ] 4. Suasana + Area
+- [x] 4. Suasana + Area
 - [ ] 5. Foods & Drinks + Live Music
 - [ ] 6. Galeri lightbox/filter + modal video
 - [ ] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
@@ -95,7 +95,7 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 Catatan sesi terakhir: (maks 3 baris)
 - Stack = Vite+React+motion (Next dibatalkan, risiko proot; §2 mengizinkan fallback). Oranye final #EF6524.
 - WebP+varian 480, musik 128k loudnorm, favicon/512 logo via `scripts/optimize.sh`. Hero panel vertikal di ≥900px, video autoplay hanya non-reduced+non-saveData.
-- Berikutnya: Tugas 4 (Suasana + Area). Build lolos; QA visual manual di checklist akhir (Playwright tak tersedia di sini).
+- Berikutnya: Tugas 5 (Foods & Drinks + Live Music). Tema: dark black #080807 + glow oranye dari #EF6524. Reveal kini berbasis motion. Build lolos; QA visual manual (Playwright tak tersedia).
 
 ## 9. Laporan akhir
 
