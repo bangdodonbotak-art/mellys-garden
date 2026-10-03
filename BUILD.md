@@ -90,11 +90,12 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [x] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
 - [x] 8. Polish motion, aksesibilitas, performa
 - [x] 9. `npm run build` + uji 375/768/1440 + perbaikan
-- [ ] 10. Laporan akhir
+- [x] 10. Laporan akhir → `docs/REPORT.md`
 
 Catatan sesi terakhir: (maks 3 baris)
-- Tugas 9: Playwright tetap tak tersedia (binary Chromium tak ter-install, `install` menggantung di proot) → uji responsif via review statis breakpoint (375/768/1440) + `vite preview` (html/js/css → 200). Temuan diperbaiki: `.mp-meta{display:none}` ≤900px menyembunyikan pemilih trek → kini hanya `.mp-title` yang hidden, `select` tetap tersentuh (pill ~262px, muat di 375).
-- Build lolos (10.16s; CSS 24.24 kB gzip 5.34; JS 428.65 kB gzip 133.45). Checklist QA manual: `docs/QA_CHECKLIST.md`. Berikutnya: Tugas 10.
+- Tugas 10: laporan akhir ditulis di `docs/REPORT.md` (arsitektur, hasil build, cara menjalankan, deploy Vercel). Catatan: BUILD.md §9 menulis `npm start` — proyek ini memakainya sebagai `npm run preview` (sajikan `dist/`).
+- Build lolos (7.17s; CSS 24.24 kB gzip 5.34; JS 428.65 kB gzip 133.45; `dist/` ±34 MB). `TODO_VERIFY` tersisa satu: domain `og:image` (index.html:16-17), diganti saat domain final.
+- Semua tugas §8 selesai. Menunggu: QA manual user (`docs/QA_CHECKLIST.md`).
 
 ## 9. Laporan akhir
 

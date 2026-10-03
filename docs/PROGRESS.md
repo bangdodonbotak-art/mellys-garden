@@ -5,7 +5,7 @@ File ini hanya ringkasan + keputusan + berikutnya. Keputusan detail: `docs/AUDIT
 
 ## Status (2026-10-03)
 
-Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) · 6 (Galeri masonry 24 foto + filter area + lightbox + modal video opening) · 7 (Rating + Visit/reservasi/kontak/lokasi + Footer + JSON-LD BarOrPub) · 8 (polish motion/a11y/perf) · 9 (build + review responsif statis + perbaikan pemutar musik mobile) — `npm run build` lolos; checklist QA manual di `docs/QA_CHECKLIST.md`.
+Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) · 6 (Galeri masonry 24 foto + filter area + lightbox + modal video opening) · 7 (Rating + Visit/reservasi/kontak/lokasi + Footer + JSON-LD BarOrPub) · 8 (polish motion/a11y/perf) · 9 (build + review responsif statis + perbaikan pemutar musik mobile) · **10 (laporan akhir → `docs/REPORT.md`)** — semua tugas BUILD.md §8 selesai.
 
 ## Keputusan
 
@@ -42,7 +42,11 @@ Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, 
 
 - Tugas 9: uji responsif via review statis breakpoint (375/768/1440) + `vite preview` (html/js/css → 200; hash asset cocok), karena Playwright/Chromium tak bisa di-install di proot. Breakpoint CSS: 860 (Garden/Spaces/Food/Live), 900 (Hero panel, nav, musicplayer, gal masonry, sizes), 620 (gap masonry, lightbox nav). Tidak ada overflow horizontal di kode: semua lebar pakai `min()/clamp()`, `.live-sr-only` nowrap tersembunyi, `food-rack` memang scroll internal, tile `62vw`.
 - Tugas 9 perbaikan: pemutar musik ≤900px — `.mp-meta{display:none}` membuat `select` trek tak tersentuh di HP; kini hanya `.mp-title` yang hidden, select tetap tampil (max-width 128px; pill ±262px muat 375). Tidak ada dependency baru.
+- Tugas 10: laporan akhir di `docs/REPORT.md` (§9 BUILD.md: arsitektur + hasil build + cara menjalankan + deploy Vercel). BUILD.md §9 menulis `npm start`; repo ini memakai `npm run preview` (sajikan `dist/`) — dicatat di laporan. `TODO_VERIFY` tersisa satu: domain `og:image` (`index.html:16-17`), diganti saat domain final.
 
 ## Berikutnya
 
-Tugas 10 — laporan akhir (arsitektur + hasil build + cara menjalankan + deploy Vercel). Sambil menunggu: user jalankan checklist `docs/QA_CHECKLIST.md` di perangkat/DevTools (375/768/1440) → temuan diperbaiki sebelum Tugas 10.
+Proyek selesai (Tugas 0–10). Menunggu:
+1. QA manual user via `docs/QA_CHECKLIST.md` (375/768/1440 + perangkat nyata) → temuan diperbaiki.
+2. Saat domain final ada: ganti `og:image` (`index.html:16-17`), robots → `index,follow`, daftar Search Console, deploy ulang ke Vercel.
+3. Bila pemilik kirim data (harga menu, nama band, teks ulasan): tambah ke `src/data/site.js` — slot sudah disiapkan, tanpa mengarang.
