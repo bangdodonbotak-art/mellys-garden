@@ -70,8 +70,15 @@
   color: var(--cream);
 }
 
+/* HP/tablet: sembunyikan label, pemilih trek tetap bisa dipakai. */
 @media (max-width: 900px) {
-  .mp-meta {
+  .mp-title {
     display: none;
+  }
+  .mp-meta {
+    gap: 0;
+  }
+  .mp-meta select {
+    max-width: 128px;
   }
 }

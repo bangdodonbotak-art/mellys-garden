@@ -89,12 +89,12 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [x] 6. Galeri lightbox/filter + modal video
 - [x] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
 - [x] 8. Polish motion, aksesibilitas, performa
-- [ ] 9. `npm run build` + uji 375/768/1440 + perbaikan
+- [x] 9. `npm run build` + uji 375/768/1440 + perbaikan
 - [ ] 10. Laporan akhir
 
 Catatan sesi terakhir: (maks 3 baris)
-- Tugas 8: impor DM Sans 400/500/600/700 (sebelumnya hanya 400 → bold sintetis); preload poster hero + theme-color `#080807` + og:image absolut (TODO_VERIFY domain); kill-switch reduced-motion global di tokens.css; `.mp-mute` 36→44px; `lang="id"` label hari & jam Indonesia; stagger entrance Hero (motion variants, skip saat reduced).
-- Build lolos (10.35s; CSS 24.19 kB gzip 5.32 — woff2 4 weight; JS 428.65 kB gzip 133.45). QA visual manual tetap backlog (Playwright tak tersedia). Berikutnya: Tugas 9.
+- Tugas 9: Playwright tetap tak tersedia (binary Chromium tak ter-install, `install` menggantung di proot) → uji responsif via review statis breakpoint (375/768/1440) + `vite preview` (html/js/css → 200). Temuan diperbaiki: `.mp-meta{display:none}` ≤900px menyembunyikan pemilih trek → kini hanya `.mp-title` yang hidden, `select` tetap tersentuh (pill ~262px, muat di 375).
+- Build lolos (10.16s; CSS 24.24 kB gzip 5.34; JS 428.65 kB gzip 133.45). Checklist QA manual: `docs/QA_CHECKLIST.md`. Berikutnya: Tugas 10.
 
 ## 9. Laporan akhir
 
