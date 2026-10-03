@@ -1,0 +1,105 @@
+/* Visit — info alamat/jam/kontak + panel CTA. Latar default --ink,
+   selang-seling sesudah Rating (--ink-2). */
+
+.visit-top {
+  margin-bottom: clamp(32px, 5vw, 52px);
+}
+
+.visit-eyebrow {
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  text-shadow: var(--neon-text);
+}
+
+.visit-accent {
+  color: var(--orange);
+  text-shadow: var(--neon-text);
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visit-info {
+  font-style: normal;
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+
+.visit-line {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: var(--cream-dim);
+  line-height: 1.65;
+}
+
+.visit-line svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--orange);
+}
+
+.visit-line a {
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(241, 235, 221, 0.25);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.visit-line a:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+.visit-link {
+  font-weight: 700;
+}
+
+.visit-info em {
+  color: var(--sage);
+  font-style: italic;
+}
+
+.visit-cta {
+  background: var(--ink-2);
+  border: 1.5px solid rgba(241, 235, 221, 0.1);
+  border-radius: var(--radius);
+  padding: clamp(26px, 4vw, 40px);
+  display: grid;
+  gap: 16px;
+  align-content: center;
+  justify-items: start;
+  box-shadow: var(--shadow);
+}
+
+.visit-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.visit-cta-copy {
+  color: var(--cream-dim);
+}
+
+.visit-cta .btn {
+  width: 100%;
+  justify-content: center;
+}

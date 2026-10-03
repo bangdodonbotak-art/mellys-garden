@@ -5,7 +5,7 @@ File ini hanya ringkasan + keputusan + berikutnya. Keputusan detail: `docs/AUDIT
 
 ## Status (2026-10-03)
 
-Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) · 6 (Galeri masonry 24 foto + filter area + lightbox + modal video opening) — `npm run build` lolos.
+Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) · 6 (Galeri masonry 24 foto + filter area + lightbox + modal video opening) · 7 (Rating + Visit/reservasi/kontak/lokasi + Footer + JSON-LD BarOrPub) — `npm run build` lolos.
 
 ## Keputusan
 
@@ -28,7 +28,13 @@ Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, 
 - Lightbox berjalan atas daftar TERFILTER (prev/next/swipe tak melompat ke foto tersembunyi), wrap-around, panah keyboard, sapuan jari |dx|>45px, caption "Area · n / total", guard indeks di-clamp saat filter diperkecil while open; tiap ganti foto fade (key=src).
 - Modal video opening: `<video>` hanya ter-mount saat modal buka → opening-full.mp4 (8.7MB) tidak di-download saat load; `preload="none"` + poster webp hero; `play().catch(()=>{})` aman (dipicu klik user, bukan autoplay otomatis); musik latar dipause via event window `mellys:pause-music` (`pauseBackgroundMusic()` di hooks.js) tanpa mengangkat state audio ke App.
 - Nama band tidak dibaca dari poster → caption lightbox & alt hanya label area (selaras aturan CONTENT_CONFLICTS).
+- Tugas 7 penomoran eyebrow: Rating = "06 / The verdict", Visit = "07 / Visit" (melanjutkan 01–05). Latar berselang: Gallery `--ink` → Rating `--ink-2` → Visit `--ink` → Footer `--ink` + border-top halus.
+- Rating: angka dari `data/site.js` (`±4.5` Google, `4.0` Tripadvisor) tampil apa adanya beserta label sumber + "±"; bintang (phosphor `Star`/`StarHalf`, `--amber`) hanya dekorasi `aria-hidden` dengan sr-only "Rated X on Y" per kartu — tidak membulatkan/mengarang.
+- Visit (`id="reserve"`, sesuai nav): `<address>` semantik berisi alamat + tautan Maps nyata (`contact.mapsUrl`), jam (en + id), WA, telepon (`tel:`) — ikon phosphor seragam 20px; "map art" dari referensi dihapus karena tak dapat diverifikasi. Kartu CTA kanan: Reserve via WhatsApp + Call.
+- Footer: nama + tagline + nav (`data nav`) + sosial IG/TikTok/WA (aria-label, rel noopener noreferrer) + © tahun dinamis.
+- JSON-LD `BarOrPub` di `index.html` dari data §3 BUILD.md: nama, alamat lengkap, telepon, `openingHoursSpecification` 06:00 semua hari, `sameAs` IG+TikTok. TANPA `aggregateRating` — nilai aproksimasi "±" dan jumlah review tak terverifikasi (§CLAUDE.md: jangan mengarang review/klaim).
+- Ikon phosphor yang benar: `WhatsappLogo`, `InstagramLogo`, `TiktokLogo`, `MapPinLine` (bukan `WhatsApp`/`MapPin`).
 
 ## Berikutnya
 
-Tugas 7 — Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD. Lalu 8 polish, 9 uji 375/768/1440, 10 laporan akhir. Catatan QA visual manual masih menumpuk dari Tugas 3–6 (Playwright tak tersedia).
+Tugas 8 — Polish motion, aksesibilitas, performa. Lalu 9 uji 375/768/1440 + perbaikan, 10 laporan akhir. Catatan QA visual manual masih menumpuk dari Tugas 3–7 (Playwright tak tersedia).

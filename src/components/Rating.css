@@ -1,0 +1,101 @@
+/* Rating — dua kartu angka + sumber. Selang-seling latar: sesudah Gallery
+   (--ink) section ini pakai --ink-2. Bintang = dekorasi, angka tetap sumber. */
+
+.rating {
+  background: var(--ink-2);
+}
+
+.rt-top {
+  margin-bottom: clamp(28px, 5vw, 44px);
+}
+
+.rt-eyebrow {
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  text-shadow: var(--neon-text);
+}
+
+.rt-accent {
+  color: var(--orange);
+  text-shadow: var(--neon-text);
+}
+
+.rt-top .lead {
+  margin-top: 16px;
+}
+
+.rt-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(14px, 2.5vw, 22px);
+}
+
+.rt-card {
+  position: relative;
+  background: var(--ink-3);
+  border: 1.5px solid rgba(241, 235, 221, 0.1);
+  border-radius: var(--radius);
+  padding: clamp(22px, 4vw, 34px);
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+
+.rt-value {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4.4rem);
+  line-height: 0.9;
+  color: var(--orange);
+  text-shadow: var(--neon-text);
+}
+
+.rt-stars {
+  display: inline-flex;
+  gap: 4px;
+  color: var(--amber);
+}
+
+.rt-star-empty {
+  color: rgba(241, 235, 221, 0.28);
+}
+
+.rt-source {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--cream-dim);
+}
+
+.rt-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.rt-note {
+  margin-top: clamp(24px, 4vw, 36px);
+  color: var(--cream-dim);
+}
+
+.rt-link {
+  color: var(--orange);
+  font-weight: 700;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.rt-link:hover {
+  text-shadow: var(--neon-text);
+}

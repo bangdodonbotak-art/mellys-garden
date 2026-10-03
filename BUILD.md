@@ -87,15 +87,15 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [x] 4. Suasana + Area
 - [x] 5. Foods & Drinks + Live Music
 - [x] 6. Galeri lightbox/filter + modal video
-- [ ] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
+- [x] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
 - [ ] 8. Polish motion, aksesibilitas, performa
 - [ ] 9. `npm run build` + uji 375/768/1440 + perbaikan
 - [ ] 10. Laporan akhir
 
 Catatan sesi terakhir: (maks 3 baris)
-- Tugas 6: Galeri (05 masonry 3→2 kolom, 24 foto siling antar area, tab filter a11y, lightbox putar tanpa batas + swipe + panah, caption "Area · n / total") + modal video opening (`<video>` hanya ter-mount saat buka → tanpa download 8.7MB; pause musik via event; play() atas klik user).
-- Overlay.jsx = dasar modal bersama (portal, scroll lock, inert sibling, Escape, bklik latar, fokus simpan/pulih; z-index 100 di atas Header 90/MusicPlayer 95). Copy verbatim index-1.html.
-- Build lolos (7-11s). QA visual manual — Playwright tak tersedia. Berikutnya: Tugas 7 (Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD).
+- Tugas 7: Rating (`06 / The verdict`, nilai ±4.5/4.0 beserta sumber, bintang dekoratif + sr-only) + Visit (`07 / Visit`, id `#reserve`: alamat+Maps, jam, WA, telepon; kartu CTA) + Footer (nav, IG/TikTok/WA) + JSON-LD BarOrPub di index.html.
+- Kejujuran data: TANPA aggregateRating di JSON-LD (nilai aproksimasi ±, jumlah review tak terverifikasi); "map art" diganti tautan Maps nyata; semua salin dari `src/data/site.js`, tanpa fakta baru.
+- Build lolos (7.7s). QA visual manual — Playwright tak tersedia. Berikutnya: Tugas 8 (polish motion/a11y/perf).
 
 ## 9. Laporan akhir
 
