@@ -88,14 +88,13 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [x] 5. Foods & Drinks + Live Music
 - [x] 6. Galeri lightbox/filter + modal video
 - [x] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
-- [ ] 8. Polish motion, aksesibilitas, performa
+- [x] 8. Polish motion, aksesibilitas, performa
 - [ ] 9. `npm run build` + uji 375/768/1440 + perbaikan
 - [ ] 10. Laporan akhir
 
 Catatan sesi terakhir: (maks 3 baris)
-- Tugas 7: Rating (`06 / The verdict`, nilai ±4.5/4.0 beserta sumber, bintang dekoratif + sr-only) + Visit (`07 / Visit`, id `#reserve`: alamat+Maps, jam, WA, telepon; kartu CTA) + Footer (nav, IG/TikTok/WA) + JSON-LD BarOrPub di index.html.
-- Kejujuran data: TANPA aggregateRating di JSON-LD (nilai aproksimasi ±, jumlah review tak terverifikasi); "map art" diganti tautan Maps nyata; semua salin dari `src/data/site.js`, tanpa fakta baru.
-- Build lolos (7.7s). QA visual manual — Playwright tak tersedia. Berikutnya: Tugas 8 (polish motion/a11y/perf).
+- Tugas 8: impor DM Sans 400/500/600/700 (sebelumnya hanya 400 → bold sintetis); preload poster hero + theme-color `#080807` + og:image absolut (TODO_VERIFY domain); kill-switch reduced-motion global di tokens.css; `.mp-mute` 36→44px; `lang="id"` label hari & jam Indonesia; stagger entrance Hero (motion variants, skip saat reduced).
+- Build lolos (10.35s; CSS 24.19 kB gzip 5.32 — woff2 4 weight; JS 428.65 kB gzip 133.45). QA visual manual tetap backlog (Playwright tak tersedia). Berikutnya: Tugas 9.
 
 ## 9. Laporan akhir
 

@@ -39,7 +39,7 @@ export default function Visit() {
               <span>
                 {brand.hours.en}
                 <br />
-                <em>{brand.hours.id}</em>
+                <em lang="id">{brand.hours.id}</em>
               </span>
             </p>
             <p className="visit-line">

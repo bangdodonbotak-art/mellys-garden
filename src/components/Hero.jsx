@@ -22,9 +22,25 @@ export default function Hero({ onOpenVideo }) {
     v.play().catch(() => {});
   }, [reduced]);
 
-  const rise = reduced
+  // Stagger ringan: tiap elemen masuk berurutan (opacity + translateY saja).
+  const wrap = reduced
     ? {}
-    : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
+    : {
+        initial: "hidden",
+        animate: "visible",
+        variants: {
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
+        },
+      };
+  const item = reduced
+    ? {}
+    : {
+        variants: {
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+        },
+      };
 
   return (
     <section className="hero" id="top" aria-label="Enter the garden">
@@ -43,20 +59,18 @@ export default function Hero({ onOpenVideo }) {
         </video>
       </div>
 
-      <motion.div
-        className="hero-copy container"
-        {...rise}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <p className="hero-kicker">{brand.kicker} · Open Every Day</p>
-        <h1 className="hero-title">
+      <motion.div className="hero-copy container" {...wrap}>
+        <motion.p className="hero-kicker" {...item}>
+          {brand.kicker} · Open Every Day
+        </motion.p>
+        <motion.h1 className="hero-title" {...item}>
           Enter the
           <span className="hero-title-accent">Garden.</span>
-        </h1>
-        <p className="hero-sub">
+        </motion.h1>
+        <motion.p className="hero-sub" {...item}>
           Food, drinks, music, friends — and garden lights. {brand.hours.en}.
-        </p>
-        <div className="hero-actions">
+        </motion.p>
+        <motion.div className="hero-actions" {...item}>
           <a className="btn btn-primary" href={wa.reserve} target="_blank" rel="noopener">
             <Phone size={18} weight="fill" /> Reserve a table
           </a>
@@ -66,7 +80,7 @@ export default function Hero({ onOpenVideo }) {
           <button type="button" className="btn btn-ghost" onClick={onOpenVideo}>
             <Play size={16} weight="fill" /> Watch the opening
           </button>
-        </div>
+        </motion.div>
       </motion.div>
 
       <p className="scroll-note" aria-hidden="true">

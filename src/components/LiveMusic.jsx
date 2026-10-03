@@ -83,7 +83,7 @@ export default function LiveMusic() {
                     onClick={() => setActive(day.key)}
                     onKeyDown={(e) => onTabKeyDown(e, i)}
                   >
-                    {day.label}
+                    <span lang="id">{day.label}</span>
                     {day.key === today && (
                       <span className="live-today-dot" aria-hidden="true" />
                     )}

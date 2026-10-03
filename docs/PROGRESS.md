@@ -5,7 +5,7 @@ File ini hanya ringkasan + keputusan + berikutnya. Keputusan detail: `docs/AUDIT
 
 ## Status (2026-10-03)
 
-Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) · 6 (Galeri masonry 24 foto + filter area + lightbox + modal video opening) · 7 (Rating + Visit/reservasi/kontak/lokasi + Footer + JSON-LD BarOrPub) — `npm run build` lolos.
+Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) · 6 (Galeri masonry 24 foto + filter area + lightbox + modal video opening) · 7 (Rating + Visit/reservasi/kontak/lokasi + Footer + JSON-LD BarOrPub) · 8 (polish motion/a11y/perf) — `npm run build` lolos.
 
 ## Keputusan
 
@@ -34,7 +34,12 @@ Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, 
 - Footer: nama + tagline + nav (`data nav`) + sosial IG/TikTok/WA (aria-label, rel noopener noreferrer) + © tahun dinamis.
 - JSON-LD `BarOrPub` di `index.html` dari data §3 BUILD.md: nama, alamat lengkap, telepon, `openingHoursSpecification` 06:00 semua hari, `sameAs` IG+TikTok. TANPA `aggregateRating` — nilai aproksimasi "±" dan jumlah review tak terverifikasi (§CLAUDE.md: jangan mengarang review/klaim).
 - Ikon phosphor yang benar: `WhatsappLogo`, `InstagramLogo`, `TiktokLogo`, `MapPinLine` (bukan `WhatsApp`/`MapPin`).
+- Tugas 8 performa: `@fontsource/dm-sans` impor eksplisit 400/500/600/700 (index.css hanya ships 400; kode pakai 500–700 → bold sintetis browser). Tanpa dependency baru.
+- Tugas 8 LCP: `<link rel="preload" as="image" href="/assets/video/hero-poster.webp">` (poster 60KB = elemen terbesar first paint); `theme-color` disamakan `--ink` #080807; og:image URL absolut + komentar `TODO_VERIFY` domain final (robot `noindex,nofollow` tetap sampai domain nyata — BUILD.md §33).
+- Tugas 8 reduced-motion: kill-switch global di tokens.css (`*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important }` — bukan `0`, agar event *end tetap fired; guard per-file dipertahankan sebagai lapis pertama). Komponen motion JS sudah pakai `useReducedMotion`; tidak ada listener transitionend/animationend di kodebase → aman.
+- Tugas 8 a11y: `.mp-mute` 36→44px (hapus override, ikut rule `.mp-toggle,.mp-mute` 44px); `lang="id"` pada label hari Senin–Minggu (LiveMusic tab) dan `hours.id` (Visit) — halaman `lang="en"`, pengucapan screen reader benar. Fokus & skip-link & alt & kontras (audit): sudah lolos, tanpa perubahan.
+- Tugas 8 motion Hero: entrance satu blok → stagger ringan via motion variants parent (`staggerChildren 0.09, delayChildren 0.1`) + children (opacity + y20, 0.7s easeOut, transform/opacity saja); `reduced` → prop variants dihilangkan total (render langsung, tanpa animasi).
 
 ## Berikutnya
 
-Tugas 8 — Polish motion, aksesibilitas, performa. Lalu 9 uji 375/768/1440 + perbaikan, 10 laporan akhir. Catatan QA visual manual masih menumpuk dari Tugas 3–7 (Playwright tak tersedia).
+Tugas 9 — `npm run build` + uji responsif 375/768/1440 + perbaikan. Lalu 10 laporan akhir. Catatan QA visual manual masih menumpuk dari Tugas 3–8 (Playwright tak tersedia) → rangkum jadi checklist manual untuk user.
