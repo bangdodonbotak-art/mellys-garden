@@ -85,7 +85,7 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [x] 2. Scaffold (Vite+React+motion, fallback §2; `src/data/site.js`, token tema, shell)
 - [x] 3. Hero + nav + pemutar musik
 - [x] 4. Suasana + Area
-- [ ] 5. Foods & Drinks + Live Music
+- [x] 5. Foods & Drinks + Live Music
 - [ ] 6. Galeri lightbox/filter + modal video
 - [ ] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
 - [ ] 8. Polish motion, aksesibilitas, performa
@@ -93,9 +93,9 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [ ] 10. Laporan akhir
 
 Catatan sesi terakhir: (maks 3 baris)
-- Stack = Vite+React+motion (Next dibatalkan, risiko proot; §2 mengizinkan fallback). Oranye final #EF6524.
-- WebP+varian 480, musik 128k loudnorm, favicon/512 logo via `scripts/optimize.sh`. Hero panel vertikal di ≥900px, video autoplay hanya non-reduced+non-saveData.
-- Berikutnya: Tugas 5 (Foods & Drinks + Live Music). Tema: dark black #080807 + glow oranye dari #EF6524. Reveal kini berbasis motion. Build lolos; QA visual manual (Playwright tak tersedia).
+- Tugas 5: Food (eyebrow 03, rak foto bleed 768×1376 srcset, offset selang-seling, CTA menu via WA + @mellysgarden; tanpa nama/harga menu) + Live Music (04, tab Senin–Minggu a11y + sorot hari ini via useTodayDow, poster utuh 810×1441 contain).
+- Copy verbatim dari index-1.html; nama band tidak dibaca dari poster. Build lolos (2m). QA visual manual — Playwright tak tersedia.
+- Berikutnya: Tugas 6 (Galeri lightbox/filter + modal video).
 
 ## 9. Laporan akhir
 

@@ -1,0 +1,117 @@
+/* Foods & Drinks — "bar shelf": satu-satunya section yang keluar dari grid,
+   foto berjajar dengan offset selang-seling + glow counter oranye di bawah. */
+
+.food {
+  overflow: clip;
+}
+
+.food-top {
+  display: grid;
+  gap: 20px 48px;
+  align-items: end;
+  margin-bottom: clamp(36px, 6vw, 64px);
+}
+
+@media (min-width: 860px) {
+  .food-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.food-eyebrow {
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  text-shadow: var(--neon-text);
+}
+
+.food-accent {
+  color: var(--orange);
+  text-shadow: var(--neon-text);
+}
+
+.food-rack {
+  display: flex;
+  align-items: start;
+  gap: clamp(14px, 2.2vw, 26px);
+  /* tepi kiri sejajar konten .container di semua lebar; foto bleed ke kanan */
+  padding: 4px max(var(--gutter), calc((100% - 1280px) / 2 + var(--gutter))) clamp(34px, 4vw, 44px);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(239, 101, 36, 0.5) transparent;
+  /* garis cahaya counter lampu di bawah rak */
+  background: radial-gradient(
+    120% 60px at 50% 100%,
+    rgba(239, 101, 36, 0.14),
+    transparent 70%
+  );
+}
+
+.food-rack::-webkit-scrollbar {
+  height: 8px;
+}
+
+.food-rack::-webkit-scrollbar-thumb {
+  background: rgba(239, 101, 36, 0.5);
+  border-radius: 999px;
+}
+
+.food-tile {
+  position: relative;
+  flex: 0 0 min(62vw, 300px);
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  outline: 1px solid rgba(241, 235, 221, 0.08);
+  box-shadow: var(--shadow);
+  background: var(--ink-2);
+}
+
+/* offset selang-seling — irama lampu gantung, bukan kartu seragam */
+.food-tile.is-even {
+  transform: translateY(clamp(18px, 3vw, 34px));
+}
+
+.food-tile img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 768 / 1376;
+  object-fit: cover;
+}
+
+.food-tile figcaption {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  color: var(--amber);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-shadow: 0 1px 10px rgba(8, 8, 7, 0.9);
+}
+
+@media (hover: hover) {
+  .food-tile:hover {
+    outline-color: rgba(239, 101, 36, 0.55);
+    box-shadow: var(--shadow), var(--glow-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-tile.is-even {
+    transform: none;
+  }
+}
+
+/* reduced motion tetap aman: .food-rack scroll manual tidak terpengaruh. */
+
+.food-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: clamp(40px, 6vw, 56px);
+}
