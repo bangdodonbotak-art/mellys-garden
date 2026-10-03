@@ -1,0 +1,208 @@
+/* Galeri — dinding kenangan: masonry kolom (foto 768×1376portrait),
+   filter per area mengikuti pola tab Live Music. Latar default (--ink),
+   selang-seling dengan Live Music di atasnya (--ink-2). */
+
+.gal-top {
+  margin-bottom: clamp(28px, 5vw, 44px);
+}
+
+.gal-eyebrow {
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  text-shadow: var(--neon-text);
+}
+
+.gal-accent {
+  color: var(--orange);
+  text-shadow: var(--neon-text);
+}
+
+.gal-top .lead {
+  margin-top: 16px;
+}
+
+.gal-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.gal-tab {
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(241, 235, 221, 0.18);
+  background: transparent;
+  color: var(--cream-dim);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.gal-tab:hover {
+  border-color: var(--amber);
+  color: var(--cream);
+}
+
+.gal-tab.is-active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--orange-ink);
+  box-shadow: var(--glow-soft);
+}
+
+/* Masonry kolom: 3 → 2 (≤900) dengan gap mengecil (≤620). */
+.gal-masonry {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .gal-masonry {
+    column-count: 2;
+    column-gap: 12px;
+  }
+}
+
+@media (max-width: 620px) {
+  .gal-masonry {
+    column-gap: 8px;
+  }
+}
+
+.gal-cell {
+  break-inside: avoid;
+  margin: 0 0 20px;
+}
+
+@media (max-width: 900px) {
+  .gal-cell {
+    margin-bottom: 12px;
+  }
+}
+
+.gal-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--ink-3);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gal-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(0.92);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gal-item:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-item img {
+    transition: none;
+  }
+  .gal-item:hover img {
+    transform: none;
+  }
+}
+
+.gal-chip {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(8, 7, 6, 0.72);
+  color: var(--cream);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Lightbox */
+
+.gal-lightbox .gal-fig {
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.gal-full {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 76vh;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow), var(--glow);
+}
+
+.gal-cap {
+  color: var(--cream-dim);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(241, 235, 221, 0.22);
+  background: rgba(16, 16, 16, 0.72);
+  color: var(--cream);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.gal-prev {
+  left: 14px;
+}
+
+.gal-next {
+  right: 14px;
+}
+
+.gal-nav:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+@media (max-width: 620px) {
+  .gal-nav {
+    width: 44px;
+    height: 44px;
+  }
+  .gal-prev {
+    left: 8px;
+  }
+  .gal-next {
+    right: 8px;
+  }
+  .gal-full {
+    max-height: 70vh;
+  }
+}

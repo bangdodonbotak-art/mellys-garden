@@ -5,6 +5,8 @@ import Garden from "./components/Garden.jsx";
 import Spaces from "./components/Spaces.jsx";
 import Food from "./components/Food.jsx";
 import LiveMusic from "./components/LiveMusic.jsx";
+import Gallery from "./components/Gallery.jsx";
+import OpeningModal from "./components/OpeningModal.jsx";
 import MusicPlayer from "./components/MusicPlayer.jsx";
 
 export default function App() {
@@ -18,13 +20,15 @@ export default function App() {
       <Header />
       <main>
         <Hero onOpenVideo={() => setOpeningOpen(true)} />
-        {/* Tugas 6+: Galeri, Reservasi, Footer */}
+        {/* Tugas 7+: Reservasi, Footer */}
         <Garden />
         <Spaces />
         <Food />
         <LiveMusic />
+        <Gallery />
       </main>
       <MusicPlayer />
+      <OpeningModal open={openingOpen} onClose={() => setOpeningOpen(false)} />
     </>
   );
 }

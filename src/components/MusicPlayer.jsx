@@ -16,6 +16,18 @@ export default function MusicPlayer() {
     a.play().catch(() => setPlaying(false));
   }, [playing, track]);
 
+  // Pemutar otomatis dijeda saat video opening diputar (event dari hooks.js).
+  useEffect(() => {
+    const onPause = () => {
+      const a = audioRef.current;
+      if (!a) return;
+      a.pause();
+      setPlaying(false);
+    };
+    window.addEventListener("mellys:pause-music", onPause);
+    return () => window.removeEventListener("mellys:pause-music", onPause);
+  }, []);
+
   const toggle = () => {
     const a = audioRef.current;
     if (!a) return;

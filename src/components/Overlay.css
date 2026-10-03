@@ -1,0 +1,37 @@
+/* Overlay modal dasar — duduk di atas Header (90) & MusicPlayer (95),
+   di bawah skip-link (200) yang tak bisa terfokus saat modal terbuka. */
+
+.ov {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: max(24px, 4vh) var(--gutter);
+  background: rgba(5, 4, 3, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  outline: none;
+}
+
+.ov-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(241, 235, 221, 0.22);
+  background: rgba(16, 16, 16, 0.72);
+  color: var(--cream);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ov-close:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}

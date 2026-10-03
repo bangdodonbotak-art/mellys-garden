@@ -86,16 +86,16 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [x] 3. Hero + nav + pemutar musik
 - [x] 4. Suasana + Area
 - [x] 5. Foods & Drinks + Live Music
-- [ ] 6. Galeri lightbox/filter + modal video
+- [x] 6. Galeri lightbox/filter + modal video
 - [ ] 7. Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD
 - [ ] 8. Polish motion, aksesibilitas, performa
 - [ ] 9. `npm run build` + uji 375/768/1440 + perbaikan
 - [ ] 10. Laporan akhir
 
 Catatan sesi terakhir: (maks 3 baris)
-- Tugas 5: Food (eyebrow 03, rak foto bleed 768×1376 srcset, offset selang-seling, CTA menu via WA + @mellysgarden; tanpa nama/harga menu) + Live Music (04, tab Senin–Minggu a11y + sorot hari ini via useTodayDow, poster utuh 810×1441 contain).
-- Copy verbatim dari index-1.html; nama band tidak dibaca dari poster. Build lolos (2m). QA visual manual — Playwright tak tersedia.
-- Berikutnya: Tugas 6 (Galeri lightbox/filter + modal video).
+- Tugas 6: Galeri (05 masonry 3→2 kolom, 24 foto siling antar area, tab filter a11y, lightbox putar tanpa batas + swipe + panah, caption "Area · n / total") + modal video opening (`<video>` hanya ter-mount saat buka → tanpa download 8.7MB; pause musik via event; play() atas klik user).
+- Overlay.jsx = dasar modal bersama (portal, scroll lock, inert sibling, Escape, bklik latar, fokus simpan/pulih; z-index 100 di atas Header 90/MusicPlayer 95). Copy verbatim index-1.html.
+- Build lolos (7-11s). QA visual manual — Playwright tak tersedia. Berikutnya: Tugas 7 (Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD).
 
 ## 9. Laporan akhir
 

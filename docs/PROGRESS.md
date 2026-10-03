@@ -5,7 +5,7 @@ File ini hanya ringkasan + keputusan + berikutnya. Keputusan detail: `docs/AUDIT
 
 ## Status (2026-10-03)
 
-Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) — `npm run build` lolos.
+Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, `src/data/site.js`, token tema) · 3 (Hero + nav + pemutar musik) · 4 (Suasana/Garden + 5 kartu Area, scroll reveal + parallax + glow) · 5 (Foods & Drinks 10 foto rak bleed + Live Music 7 poster dengan tab hari) · 6 (Galeri masonry 24 foto + filter area + lightbox + modal video opening) — `npm run build` lolos.
 
 ## Keputusan
 
@@ -22,7 +22,13 @@ Selesai: Tugas 0 (audit) · 1 (optimasi aset) · 2 (scaffold Vite+React+motion, 
 - Food: rak foto bleed ke tepi kanan (satu-satunya section keluar grid), gulir horizontal (`overflow-x:auto`, `tabIndex=0` + `role=group` agar bisa diakses keyboard), tile selang-seling `translateY` (irama lampu gantung) + glow counter oranye di bawah; alt generik "Food and drink at Melly's Garden, photo NN" — tanpa nama/harga menu (§CLAUDE.md; CTA "Ask the menu" → WA + IG @mellysgarden).
 - Live Music: tab aksesibel (role=tablist/tab/tabpanel, roving tabIndex, Arrow/Home/End, aria-selected/controls); label hari tetap Indonesia Senin–Minggu (keputusan CONTENT_CONFLICTS), teks UI lain bahasa Inggris (page `lang="en"`); "hari ini" disorot via `useTodayDow()` (waktu Jakarta) — titik amber + sr-only "(today)"; poster ditampilkan UTUH (`height:auto`, rasio asli 810/1441, TIDAK di-crop), transisi fade+slide 0.35s (dinihilkan saat reduced-motion).
 - Copy Live Music verbatim index-1.html: "Every night. One garden." / "Select a day to open its live music poster. Band names and times follow the poster." / "Posters by day, Monday to Sunday. Today is highlighted."
+- Tugas 6 `Overlay.jsx` = dasar modal bersama (portal ke body, scroll lock, sibling `inert`, Escape + klik latar + `[data-close]`, fokus simpan/pulih). z-index 100: di atas Header 90 / MusicPlayer 95, di bawah skip-link 200 (tak terfokus saat modal buka karena sibling inert).
+- Galeri: masonry CSS `column-count` 3→2 (≤900px), gap menyusut ≤620px; 24 foto disusun SILING antar area (garden_01, terrace_01, …) seperti referensi agar kolom tercampur; label area pendek (Garden/Terrace/…) di chip/alt/caption — bukan `areas[].label` "The Garden", mengikuti index-1.html.
+- Filter area = tablist aksesibel (pola LiveMusic diulang): All + 5 area, roving tabIndex, Arrow/Home/End, `aria-controls="gal-grid"` → satu `role="tabpanel"`; tanpa tabIndex di panel (tab fokus ikut seleksi, sama dengan LiveMusic).
+- Lightbox berjalan atas daftar TERFILTER (prev/next/swipe tak melompat ke foto tersembunyi), wrap-around, panah keyboard, sapuan jari |dx|>45px, caption "Area · n / total", guard indeks di-clamp saat filter diperkecil while open; tiap ganti foto fade (key=src).
+- Modal video opening: `<video>` hanya ter-mount saat modal buka → opening-full.mp4 (8.7MB) tidak di-download saat load; `preload="none"` + poster webp hero; `play().catch(()=>{})` aman (dipicu klik user, bukan autoplay otomatis); musik latar dipause via event window `mellys:pause-music` (`pauseBackgroundMusic()` di hooks.js) tanpa mengangkat state audio ke App.
+- Nama band tidak dibaca dari poster → caption lightbox & alt hanya label area (selaras aturan CONTENT_CONFLICTS).
 
 ## Berikutnya
 
-Tugas 6 — Galeri lightbox/filter + modal video. Lalu 7 (Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD), 8 polish, 9 uji 375/768/1440, 10 laporan akhir. Catatan QA visual manual masih menumpuk dari Tugas 3–5 (Playwright tak tersedia).
+Tugas 7 — Rating + Reservasi/Kontak/Lokasi + footer + JSON-LD. Lalu 8 polish, 9 uji 375/768/1440, 10 laporan akhir. Catatan QA visual manual masih menumpuk dari Tugas 3–6 (Playwright tak tersedia).

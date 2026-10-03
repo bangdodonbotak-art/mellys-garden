@@ -24,6 +24,12 @@ function dowJakarta() {
   return DOW_NAMES.indexOf(short);
 }
 
+// Jeda pemutar musik latar (dipakai video opening) via event window —
+// tanpa perlu mengangkat state audio ke App.
+export function pauseBackgroundMusic() {
+  window.dispatchEvent(new Event("mellys:pause-music"));
+}
+
 export function useTodayDow() {
   const [dow, setDow] = useState(dowJakarta);
   useEffect(() => {

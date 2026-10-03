@@ -1,0 +1,16 @@
+/* Video opening — panel vertikal 9:16 (720×1280) di layar lebar, blur latar dari Overlay. */
+
+.opening .opening-video {
+  width: min(420px, 100%);
+}
+
+.opening video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 82vh;
+  background: #000;
+  border: 1px solid rgba(239, 101, 36, 0.35);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow), var(--glow);
+}
