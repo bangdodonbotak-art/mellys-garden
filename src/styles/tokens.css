@@ -1,0 +1,185 @@
+/* Token tema — oranye diukur dari logo (#EF6524, lihat docs/AUDIT.md). */
+:root {
+  --ink: #0c1810;        /* latar malam botani */
+  --ink-2: #14271a;      /* permukaan */
+  --ink-3: #1c3524;      /* permukaan naik / garis */
+  --orange: #ef6524;     /* aksen brand */
+  --orange-ink: #160b04; /* teks di atas oranye */
+  --cream: #f1ebdd;      /* teks */
+  --cream-dim: #cfc7b6;  /* teks sekunder */
+  --sage: #8fa58b;       /* teks tersier, garis halus */
+  --amber: #f5c56b;      /* lampu hangat */
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --radius: 18px;
+  --radius-sm: 10px;
+  --header-h: 64px;
+}
+
+@media (prefers-color-scheme: light) {
+  /* Tetap gelap — identitas "malam di taman". Tidak ada mode terang. */
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root.is-hidden {
+  display: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 200;
+  background: var(--orange);
+  color: var(--orange-ink);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 8px;
+}
+
+/* Util */
+.container {
+  width: min(1280px, 100%);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: clamp(72px, 12vh, 140px);
+  scroll-margin-top: calc(var(--header-h) + 8px);
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 6.5vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.lead {
+  color: var(--cream-dim);
+  max-width: 52ch;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--orange-ink);
+}
+
+.btn-primary:hover {
+  background: #f97a3d;
+}
+
+.btn-ghost {
+  border-color: rgba(241, 235, 221, 0.35);
+  color: var(--cream);
+}
+
+.btn-ghost:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+/* Reveal default (tanpa JS / reduced motion: tampil penuh) */
+.reveal {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  .js .reveal.in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+}

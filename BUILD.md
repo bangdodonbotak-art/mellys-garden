@@ -80,10 +80,10 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 
 ## 8. STATUS
 
-- [ ] 0. Audit aset (metadata, path logo terbaru dan video) → `docs/AUDIT.md`
-- [ ] 1. Optimasi aset (video, foto WebP, musik, favicon) → `public/`
-- [ ] 2. Scaffold Next.js + Tailwind + motion, `data/site.ts`, tema, layout
-- [ ] 3. Hero + nav + pemutar musik
+- [x] 0. Audit aset (metadata, path logo terbaru dan video) → `docs/AUDIT.md`
+- [x] 1. Optimasi aset (video, foto WebP, musik, favicon) → `public/`
+- [x] 2. Scaffold (Vite+React+motion, fallback §2; `src/data/site.js`, token tema, shell)
+- [x] 3. Hero + nav + pemutar musik
 - [ ] 4. Suasana + Area
 - [ ] 5. Foods & Drinks + Live Music
 - [ ] 6. Galeri lightbox/filter + modal video
@@ -93,6 +93,9 @@ Kualitas: animasi `motion/react` (scroll reveal, parallax halus, transisi), `pre
 - [ ] 10. Laporan akhir
 
 Catatan sesi terakhir: (maks 3 baris)
+- Stack = Vite+React+motion (Next dibatalkan, risiko proot; §2 mengizinkan fallback). Oranye final #EF6524.
+- WebP+varian 480, musik 128k loudnorm, favicon/512 logo via `scripts/optimize.sh`. Hero panel vertikal di ≥900px, video autoplay hanya non-reduced+non-saveData.
+- Berikutnya: Tugas 4 (Suasana + Area). Build lolos; QA visual manual di checklist akhir (Playwright tak tersedia di sini).
 
 ## 9. Laporan akhir
 

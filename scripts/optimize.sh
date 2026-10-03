@@ -22,6 +22,7 @@ magick assets/logo/mellys-garden-logo.png -resize 512x512 "${PUB}/logo/logo-512.
 magick assets/logo/mellys-garden-logo.png -resize 512x512 -quality 85 "${PUB}/logo/logo-512.webp"
 magick assets/logo/mellys-garden-logo.png -resize 180x180 "${PUB}/logo/apple-touch-icon.png"
 magick assets/logo/mellys-garden-logo.png -resize 32x32 "${PUB}/logo/favicon-32.png"
+magick assets/logo/mellys-garden-logo.png -resize 32x32 public/favicon.ico
 
 # 3) Musik: 192k -> 128k + normalisasi loudness (BUILD.md §5).
 mkdir -p "${PUB}/music"
